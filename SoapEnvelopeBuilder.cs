@@ -39,13 +39,13 @@ namespace Soap
             return this;
         }
 
-        public SoapEnvelopeBuilder WithParameter(string name, Func<string, string> value)
+        public SoapEnvelopeBuilder WithParameter(string name, string value)
         {
             parameters.Add(new XElement(srv + name, value));
             return this;
         }
 
-        public SoapEnvelopeBuilder AndParameter(string name, Func<string, string> value) =>
+        public SoapEnvelopeBuilder AndParameter(string name, string value) =>
             WithParameter(name, value);
     }
 }
